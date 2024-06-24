@@ -28,7 +28,7 @@ export const AuthProvider: React.FC<AuthProps> = ({ children }) => {
   const location = useLocation();
   const [user, setUser] = useState<User>(() => {
     const jsonString =
-      localStorage.getItem('@Monetar:user') ??
+      localStorage.getItem('@Dysrup:user') ??
       `{
       "id": "", 
       "name": "", 
@@ -85,7 +85,7 @@ export const AuthProvider: React.FC<AuthProps> = ({ children }) => {
             message: 'Bem vindo ao Dysrup Projects',
           });
 
-          navigate('/dashboard');
+          navigate('/meus-projetos');
         })
         .catch((error) => {
           addAlert({
