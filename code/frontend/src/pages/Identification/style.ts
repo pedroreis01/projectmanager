@@ -1,41 +1,74 @@
+import { lighten } from 'polished';
 import styled from 'styled-components';
 
-export const Background = styled.div`
-  width: 100%;
-  height: 100%;
-  background: #0c9f96;
+export const Logo = styled.div`
+  position: absolute;
+  left: 10px;
+  top: 10px;
 `;
 
-export const Card = styled.div`
-  position: relative;
-
+export const Content = styled.div`
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   background-color: #fff;
-  padding: 56px;
   border-radius: 10px;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-  /* transition: box-shadow 0.25s; */
+  width: 100%;
+  height: 100%;
 
-  /* border: 1px solid; */
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    margin-top: 100px;
+  }
+`;
+
+export const ContentForm = styled.div`
+  width: 50%;
+  @media screen and (max-width: 768px) {
+    width: 100%;
+  }
+`;
+
+export const FormTitle = styled.div`
+  display: flex;
+  flex-direction: column;
 `;
 
 export const Form = styled.form`
   display: flex;
   justify-content: center;
   flex-direction: column;
-  align-items: center;
-  width: 100%;
+  align-items: start;
+  width: 70%;
   gap: 20px;
+
+  @media screen and (max-width: 768px) {
+    width: 100%;
+  }
 `;
 
-export const DivInfo = styled.div`
+export const ContentImage = styled.div`
   display: flex;
   justify-content: center;
+  align-items: center;
   flex-direction: column;
+  width: 50%;
 
   & > img {
-    max-width: 500px;
+    max-width: 450px;
+  }
+
+  @media screen and (max-width: 768px) {
+    width: 100%;
+  }
+`;
+
+export const Click = styled.div`
+  text-decoration-line: underline;
+  display: inline;
+  cursor: pointer;
+
+  &:hover {
+    color: ${lighten(0.5, '#000')};
   }
 `;

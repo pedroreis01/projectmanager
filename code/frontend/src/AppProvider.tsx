@@ -1,4 +1,5 @@
 import { FC, ReactNode } from 'react';
+import { AlertProvider } from './hooks/useAlert';
 
 interface AppProviderProps {
   children?: ReactNode;
@@ -6,7 +7,7 @@ interface AppProviderProps {
 
 const AppProvider: FC<AppProviderProps> = ({ children }) => {
   return (
-    <>{children}</>
+    <AlertProvider>{children}</AlertProvider>
   );
 };
 
