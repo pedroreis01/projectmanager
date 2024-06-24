@@ -8,9 +8,11 @@ import logo from '../../assets/images/logo.png';
 import { useState } from 'react';
 import api from '../../services/api';
 import useAlert from '../../hooks/useAlert';
+import { useAuth } from '../../hooks/useAuth';
 
 const Identification: React.FC = () => {
   const { addAlert } = useAlert();
+  const { signIn } = useAuth();
   const [formFieldsSignIn, setFormFieldsSignIn] = useState({
     login: '',
     password: '',
@@ -25,25 +27,7 @@ const Identification: React.FC = () => {
 
   const handleSubmitSignIn = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-      api
-        .post('auth/signIn', {
-          login: formFieldsSignIn.login,
-          password: formFieldsSignIn.password,
-        })
-        .then(() => {
-          addAlert({
-            type: 'success',
-            title: 'Login realizado com sucesso',
-            message: 'Bem vindo ao Dysrup Projects',
-          });
-        })
-        .catch((error) => {
-          addAlert({
-            type: 'danger',
-            title: 'Error ao realizar o login',
-            message: error.response.data.message,
-          });
-        });
+    signIn(formFieldsSignIn.login, formFieldsSignIn.password);
   };
 
   const handleSubmitSignUp = (e: React.FormEvent<HTMLFormElement>) => {

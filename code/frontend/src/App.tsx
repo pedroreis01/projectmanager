@@ -6,13 +6,13 @@ import { Layout } from './layout';
 
 function App() {
   return (
-    <AppProvider>
-      <Layout>
-        <BrowserRouter>
+    <BrowserRouter>
+      <AppProvider>
+        <Layout>
           <Navigation />
-        </BrowserRouter>
-      </Layout>
-    </AppProvider>
+        </Layout>
+      </AppProvider>
+    </BrowserRouter>
   );
 }
 
