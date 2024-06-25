@@ -229,7 +229,7 @@ const Tasks: React.FC = () => {
             label='Filtrar por projeto'
             onChange={handleChangeFilteredProject}
           >
-            <SelectOption value="">Selecione um projeto</SelectOption>
+            <SelectOption value="">Todos</SelectOption>
             {projects.map((project) => (
               <SelectOption key={project.id} value={String(project.id)}>
                 {project.name}
