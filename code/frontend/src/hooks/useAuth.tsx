@@ -43,7 +43,7 @@ export const AuthProvider: React.FC<AuthProps> = ({ children }) => {
   });
   const navigate = useNavigate();
 
-  const signOut = useCallback(async () => {
+  const signOut = useCallback(() => {
     localStorage.clear();
     setUser({
       id: '',

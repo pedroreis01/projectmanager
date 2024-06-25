@@ -3,7 +3,7 @@ import * as C from './style';
 
 interface ContainerProps extends React.HTMLProps<HTMLDivElement> {
   children: React.ReactNode;
-  background?:  "green" | "light" |"white";
+  background?: "gray" |"white";
   p?: string;
   pt?: string;
   pr?: string;

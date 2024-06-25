@@ -5,14 +5,14 @@ import Input from '../../components/Input';
 import * as C from './style';
 import managerProjectImg from '../../assets/images/managerproject.png';
 import logo from '../../assets/images/logo.png';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import api from '../../services/api';
 import useAlert from '../../hooks/useAlert';
 import { useAuth } from '../../hooks/useAuth';
 
 const Identification: React.FC = () => {
   const { addAlert } = useAlert();
-  const { signIn } = useAuth();
+  const { signIn, signOut } = useAuth();
   const [formFieldsSignIn, setFormFieldsSignIn] = useState({
     login: '',
     password: '',
@@ -33,34 +33,34 @@ const Identification: React.FC = () => {
   const handleSubmitSignUp = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     api
-        .post('user', {
-          name: formFieldsSignUp.name,
-          email: formFieldsSignUp.email,
-          login: formFieldsSignUp.login,
-          password: formFieldsSignUp.password,
-        })
-        .then(() => {
-          addAlert({
-            type: 'success',
-            title: 'Cadastro realizado com sucesso',
-            message: 'Faça login para prosseguir',
-          });
-          setStep(0);
-        })
-        .catch((error) => {
-          addAlert({
-            type: 'danger',
-            title: 'Error ao realizar cadastro',
-            message: error.response.data.message,
-          });
+      .post('user', {
+        name: formFieldsSignUp.name,
+        email: formFieldsSignUp.email,
+        login: formFieldsSignUp.login,
+        password: formFieldsSignUp.password,
+      })
+      .then(() => {
+        addAlert({
+          type: 'success',
+          title: 'Cadastro realizado com sucesso',
+          message: 'Faça login para prosseguir',
         });
+        setStep(0);
+      })
+      .catch((error) => {
+        addAlert({
+          type: 'danger',
+          title: 'Error ao realizar cadastro',
+          message: error.response.data.message,
+        });
+      });
   };
+
+  useEffect(() => signOut(), [signOut]);
 
   return (
     <Container background="white">
-      <C.Logo>
-        {/* <img src={logo} alt="logo" /> */}
-      </C.Logo>
+      <C.Logo>{/* <img src={logo} alt="logo" /> */}</C.Logo>
       <C.Content>
         <C.ContentForm>
           {step === 0 ? (
@@ -77,7 +77,10 @@ const Identification: React.FC = () => {
                   label="Login"
                   required
                   onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
-                    setFormFieldsSignIn({ ...formFieldsSignIn, login: e.target.value });
+                    setFormFieldsSignIn({
+                      ...formFieldsSignIn,
+                      login: e.target.value,
+                    });
                   }}
                   value={formFieldsSignIn.login}
                 />
@@ -117,17 +120,23 @@ const Identification: React.FC = () => {
                   label="Nome"
                   required
                   onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
-                    setFormFieldsSignUp({ ...formFieldsSignUp, name: e.target.value });
+                    setFormFieldsSignUp({
+                      ...formFieldsSignUp,
+                      name: e.target.value,
+                    });
                   }}
                   value={formFieldsSignUp.name}
                 />
                 <Input
                   id="email"
                   label="E-mail"
-                  type='email'
+                  type="email"
                   required
                   onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
-                    setFormFieldsSignUp({ ...formFieldsSignUp, email: e.target.value });
+                    setFormFieldsSignUp({
+                      ...formFieldsSignUp,
+                      email: e.target.value,
+                    });
                   }}
                   value={formFieldsSignUp.email}
                 />
@@ -136,7 +145,10 @@ const Identification: React.FC = () => {
                   label="Login"
                   required
                   onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
-                    setFormFieldsSignUp({ ...formFieldsSignUp, login: e.target.value });
+                    setFormFieldsSignUp({
+                      ...formFieldsSignUp,
+                      login: e.target.value,
+                    });
                   }}
                   value={formFieldsSignUp.login}
                 />
