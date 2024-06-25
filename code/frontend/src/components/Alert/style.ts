@@ -1,15 +1,14 @@
 import styled from 'styled-components';
 
 interface AlertCardThemeData {
-  borderColor: string;
+  backGround: string;
 }
 
 const AlertCard = styled.div`
   color: #ffffff;
-  background-color: #012025;
-  border-color: #00404a;
+  background-color: ${(props) => props.theme.backGround};
 
-  border: 1px solid ${(props) => props.theme.borderColor};
+  /* border: 1px solid; */
 
   display: flex;
 
@@ -47,17 +46,13 @@ export const ContentAlertWrapper = styled.div`
   align-items: flex-start;
 
   width: 100%;
-  /* margin-left: 5px; */
-  /* gap: 25px; */
 `;
 
 export const AlertClose = styled.div`
   display: flex;
   justify-content: flex-end;
   align-items: flex-start;
-
-  border: 1px solid ${(props) => props.theme.borderColor};
-  border-radius: 50%;
+  margin-right: 5px;
 
   svg {
     cursor: pointer;

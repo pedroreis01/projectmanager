@@ -19,15 +19,19 @@ export const Layout: React.FC<ILayout> = ({ children }) => {
 
   const location = useLocation();
 
+  const title = location.pathname.split('/')[1].split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1))
+  .join(' ');
+
   return routesAdmin.includes(location.pathname) ||
     location.pathname.startsWith(routesAdmin[1]) ? (
     <C.ContentWrapper>
-      <Container background="gray" p="40px 50px">
+      <Container background="gray" p="0">
         <C.MenuWrapper $open={open} onClick={() => setOpen(true)}>
           <FiMenu size={20} />
         </C.MenuWrapper>
         <Sidebar open={open} onClose={onClose} pathname={location.pathname} />
         <C.ContentSidebarWrapper $open={open} id="div-layout">
+          <C.TitleContentSidebar>{title}</C.TitleContentSidebar>
           {children}
         </C.ContentSidebarWrapper>
       </Container>

@@ -28,7 +28,8 @@ const Button = forwardRef<HTMLButtonElement, IButton>(({
 }, ref) => {
   return (isLoading ?
     <C.Button $color={color} $size={size} $round={isRound} ref={ref} {...props} disabled={true}>
-      <ClipLoader />
+      {children}
+      <C.IconDiv $ml={5}><ClipLoader /></C.IconDiv>
     </C.Button>
     :
     <C.Button $color={color} $size={size} $fullWidth={fullWidth} $round={isRound} ref={ref} {...props}>

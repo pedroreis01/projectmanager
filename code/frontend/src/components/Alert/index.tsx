@@ -23,23 +23,23 @@ const AlertPopUp: React.FC<AlertConfigData> = (params) => {
 
   const getAlertPopUpTheme = (alertType: string | undefined) => {
     let result: AlertCardThemeData = {
-      borderColor: ''
+      backGround: ''
     };
 
     switch (alertType) {
       case 'success':
         result = {
-          borderColor: '#00404A'
+          backGround: '#356e6b'
         };
         break;
       case 'danger':
         result = {
-          borderColor: '#FF6060'
+          backGround: '#974c4c'
         };
         break;
       default:
         result = {
-          borderColor: '#FFF065'
+          backGround: '#a39b54'
         };
         break;
     }

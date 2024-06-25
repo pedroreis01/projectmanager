@@ -8,13 +8,24 @@ export const ContentWrapper = styled.div`
 `;
 
 export const ContentSidebarWrapper = styled.div<{ $open: boolean }>`
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
   transition: margin-left 0.5s;
   padding: 16px;
   margin-left: ${({ $open }) => ($open ? '250px' : '0')};
-
+  height: 100%;
+  width: ${({ $open }) => ($open ? 'calc(100% - 300px)' : '90%')};
   @media only screen and (max-width: 768px) {
     margin-left: 0;
   }
+`;
+
+export const TitleContentSidebar = styled.h2`
+  font-size: 25px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  width: 100%;
 `;
 
 export const MenuWrapper = styled.div<{ $open: boolean }>`

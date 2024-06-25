@@ -60,11 +60,11 @@ export const Button = styled.button<{
       case 'small':
         return '8px 30px';
       case 'medium':
-        return '10px 36px';
+        return '10px 25px';
       case 'large':
         return '12px 40px';
       default:
-        return '10px 36px';
+        return '10px 25px';
     }
   }};
 

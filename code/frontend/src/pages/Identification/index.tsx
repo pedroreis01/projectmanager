@@ -24,10 +24,13 @@ const Identification: React.FC = () => {
     password: '',
   });
   const [step, setStep] = useState(0);
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleSubmitSignIn = (e: React.FormEvent<HTMLFormElement>) => {
+    setIsLoading(true);
     e.preventDefault();
-    signIn(formFieldsSignIn.login, formFieldsSignIn.password);
+    signIn(formFieldsSignIn.login, formFieldsSignIn.password)
+    .finally(() => setIsLoading(false));
   };
 
   const handleSubmitSignUp = (e: React.FormEvent<HTMLFormElement>) => {
@@ -97,7 +100,7 @@ const Identification: React.FC = () => {
                   }}
                   value={formFieldsSignIn.password}
                 />
-                <Button fullWidth color="submit" type="submit">
+                <Button fullWidth color="submit" isLoading={isLoading} type="submit">
                   Entrar
                 </Button>
               </C.Form>
