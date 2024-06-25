@@ -63,7 +63,7 @@ const Identification: React.FC = () => {
 
   return (
     <Container background="white">
-      <C.Logo>{/* <img src={logo} alt="logo" /> */}</C.Logo>
+      <C.Logo><img src={logo} alt="logo" /></C.Logo>
       <C.Content>
         <C.ContentForm>
           {step === 0 ? (

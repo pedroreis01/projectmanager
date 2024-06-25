@@ -2,7 +2,7 @@ import React, { forwardRef } from "react";
 import * as C from "./style";
 import { ClipLoader } from "react-spinners";
 
-interface IButton extends Omit<React.HTMLProps<HTMLButtonElement>, 'size'> {
+export interface ButtonProps extends Omit<React.HTMLProps<HTMLButtonElement>, 'size'> {
   color?: "primary" | "submit" | "danger" | "cancel" ;
   size?: "small" | "medium" | "large";
   fullWidth?: boolean;
@@ -14,7 +14,7 @@ interface IButton extends Omit<React.HTMLProps<HTMLButtonElement>, 'size'> {
   type?: "submit" | "button" | "reset";
 }
 
-const Button = forwardRef<HTMLButtonElement, IButton>(({
+const Button = forwardRef<HTMLButtonElement, ButtonProps>(({
   children,
   color,
   startIcon,

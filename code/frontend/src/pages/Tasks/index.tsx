@@ -316,7 +316,7 @@ const Tasks: React.FC = () => {
             />
           </C.FormGroup>
           <ModalFooter>
-            <Button color="cancel" type="button">
+            <Button color="cancel" type="button" onClick={handleCloseModal}>
               Cancelar
             </Button>
             <Button type="submit">{isEditTask ? 'Editar' : 'Adicionar'}</Button>

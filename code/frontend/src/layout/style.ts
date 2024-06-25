@@ -12,7 +12,6 @@ export const ContentSidebarWrapper = styled.div<{ $open: boolean }>`
   flex-direction: column;
   justify-content: start;
   transition: margin-left 0.5s;
-  padding: 16px;
   margin-left: ${({ $open }) => ($open ? '250px' : '0')};
   height: 100%;
   width: ${({ $open }) => ($open ? 'calc(100% - 300px)' : '90%')};

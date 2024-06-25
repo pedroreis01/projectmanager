@@ -37,18 +37,17 @@ const Task: React.FC<TaskProps> = ({
         onChange={() => toggleCompleted(task.id, !task.done)}
       />
       <C.TaskBody>
-        <C.TaskText $done={task.done}>
-          {task.name} - {task.projectName}
-        </C.TaskText>
+        <C.TaskText className="name-project">{task.projectName}</C.TaskText>
+        <C.TaskText $done={task.done}>{task.name}</C.TaskText>
         <C.TaskGroupDate>
           <C.TaskDate>
             <FaRegCalendarAlt /> {moment(task.dueDate).format('DD/MM/yyyy')}
           </C.TaskDate>
           {task.done && (
-              <C.TaskDate>
+            <C.TaskDate>
               <FaRegCalendarCheck />{' '}
-                {moment(task.finishedDate).format('DD/MM/yyyy')}
-              </C.TaskDate>
+              {moment(task.finishedDate).format('DD/MM/yyyy')}
+            </C.TaskDate>
           )}
         </C.TaskGroupDate>
       </C.TaskBody>

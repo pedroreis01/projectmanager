@@ -21,11 +21,23 @@ export const TaskBody = styled.div`
   display: flex;
   flex-direction: column;
   flex: 1;
+  gap: 10px;
 `;
 
 export const TaskText = styled.p<{ $done?: boolean }>`
+  font-size: 1rem;
   text-decoration-line: ${({ $done }) => ($done ? 'line-through' : 'none')};
-  margin-bottom: 0;
+  margin: 0;
+  padding-top: 0;
+
+  &.name-project {
+    font-size: 0.7rem;
+    font-weight: 500;
+    background: #f1f1f1;
+    width: fit-content;
+    padding: 2px 7px;
+    border-radius: 20px;
+  }
 `;
 
 export const TaskGroupDate = styled.div`
@@ -40,6 +52,7 @@ export const TaskDate = styled.p`
   font-size: 12px;
   color: #888;
   gap: 5px;
+  margin: 0;
 `;
 
 export const TaskActions = styled.div`
