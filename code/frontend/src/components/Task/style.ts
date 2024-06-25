@@ -7,6 +7,7 @@ export const TaskItemWrapper = styled.div`
   border: 1px solid #ccc;
   padding: 5px 10px;
   border-radius: 5px;
+  width: calc(100% - 20px);
 `;
 
 export const TaskCheckbox = styled.input`

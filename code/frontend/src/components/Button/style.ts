@@ -11,10 +11,11 @@ export const Button = styled.button<{
   align-items: center;
   justify-content: center;
   border: none;
-  border-radius: ${(props) => (!props.$round ? '6px;' : '50%;')};
-
+  border-radius: ${(props) => (!props.$round ? '6px' : '50%')};
   cursor: pointer;
   font-weight: 500;
+  height: ${(props) => !props.$round && '40px'};
+
   ${(props) => {
     switch (props.$size) {
       case 'small':
@@ -52,21 +53,17 @@ export const Button = styled.button<{
     }
   }};
 
-  padding: ${(props) => {
+  ${(props) => {
     if (props.$round) {
-      return '10px 10px';
+      return css`
+        padding: 10px 10px;
+      `;
+    } else {
+      return css`
+        padding: 0 10px;
+      `;
     }
-    switch (props.$size) {
-      case 'small':
-        return '8px 30px';
-      case 'medium':
-        return '10px 25px';
-      case 'large':
-        return '12px 40px';
-      default:
-        return '10px 25px';
-    }
-  }};
+  }}
 
   width: ${(props) => (props.$fullWidth ? '100%' : 'auto')};
 
@@ -122,6 +119,27 @@ export const Button = styled.button<{
       &:disabled {
         & > span {
           border-color: ${lighten(0.2, '#ff6a6a')} ${lighten(0.2, '#ff6a6a')}
+            transparent !important;
+        }
+      }
+    `}
+
+     ${(props) =>
+    props.$color === 'cancel' &&
+    css`
+      background: #fff;
+      color: #329fc8;
+      outline: 1px solid #329fc8;
+      & * {
+        color: #fff;
+      }
+      &:hover {
+        background: ${darken(0.1, '#FFF')};
+        outline: 1px solid ${darken(0.1, '#329fc8')};
+      }
+      &:disabled {
+        & > span {
+          border-color: ${lighten(0.2, '#FFF')} ${lighten(0.2, '#FFF')}
             transparent !important;
         }
       }

@@ -8,25 +8,35 @@ export const FormControl = styled.div`
 
 export const Label = styled.label`
   font-size: 15px;
-  display: inline-block;
+  display: block;
   margin-bottom: 8px;
-  font-weight: 500;
   color: #000;
 `;
 
-export const Input = styled.input<{ $error?: boolean }>`
+export const TextBox = styled.textarea<{ $error?: boolean; $height?: string }>`
   font-size: 16px;
   font-weight: 400;
+  color: #000;
   width: calc(100% - 30px);
   border-radius: 6px;
   padding: 10px 14px;
+  resize: none;
+  height: ${(props) => (props.$height ? props.$height : '100%')};
   border: 1px solid ${(props) => (props.$error ? '#FF6060' : '#c2c2c2')};
-
   background: #fff;
-  &::placeholder {
-    font-size: 16px;
-    font-weight: 400;
-    color: #8f8f8f;
+
+  &::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 5px;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+    cursor: pointer;
   }
 
   &:focus {
@@ -41,5 +51,6 @@ export const Error = styled.p`
   color: #ff6060;
   font-size: 14px;
   font-weight: 400;
-  top: 80%;
+  margin: 4px 0 0px 2px;
+  top: 100%;
 `;

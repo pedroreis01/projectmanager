@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const TaskListWrapper = styled.div`
   display: flex;
   flex-direction: column;
+  align-items: center;
   width: 100%;
 `;
 
@@ -19,4 +20,11 @@ export const TaskButton = styled.button`
   padding: 8px 16px;
   font-size: 16px;
   cursor: pointer;
+`;
+
+export const NoTasksText = styled.div`
+  font-size: 1.2rem;
+  font-weight: 500;
+  text-align: center;
+  padding: 40px;
 `;

@@ -3,7 +3,7 @@ import * as C from "./style";
 import { ClipLoader } from "react-spinners";
 
 interface IButton extends Omit<React.HTMLProps<HTMLButtonElement>, 'size'> {
-  color?: "primary" | "submit" | "danger" ;
+  color?: "primary" | "submit" | "danger" | "cancel" ;
   size?: "small" | "medium" | "large";
   fullWidth?: boolean;
   startIcon?: React.ReactNode;

@@ -14,6 +14,7 @@ export interface ITask {
   done: boolean;
   finishedDate: string;
   projectName: string;
+  projectId: number;
 }
 interface TaskProps {
   task: ITask;
