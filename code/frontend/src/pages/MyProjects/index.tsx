@@ -1,7 +1,8 @@
+import { CardContent } from "../../components/CardContent/style";
 
 const MyProjects: React.FC = () => {
 
-  return (<h1>Meus Projetos</h1>);
+  return (<CardContent>Meus Projetos</CardContent>);
 };
 
 export default MyProjects;
