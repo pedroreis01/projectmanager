@@ -1,0 +1,42 @@
+### list user
+GET http://localhost:3000/user
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsb2dpbiI6InBlZHJvLnJlaXMiLCJzdWIiOjEsImlhdCI6MTcxOTMzODIwMiwiZXhwIjoxNzE5NDI0NjAyfQ.UN2epRJfMjUNdySI7dff8rVePJWnyP3klqWyokPJGCs
+
+### list user with projects
+GET http://localhost:3000/user?includeProjects=true
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsb2dpbiI6Impvc2UucGVkcm8iLCJzdWIiOjMsImlhdCI6MTcxOTAyMDAwMCwiZXhwIjoxNzE5MTA2NDAwfQ.NlMcDslsTEVKyhmOgrlUq3bDF3hdkmP5sKBgb9B7KIk
+
+
+### get user
+GET http://localhost:3000/user/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsb2dpbiI6Impvc2UucGVkcm8iLCJzdWIiOjMsImlhdCI6MTcxOTAyMDAwMCwiZXhwIjoxNzE5MTA2NDAwfQ.NlMcDslsTEVKyhmOgrlUq3bDF3hdkmP5sKBgb9B7KIk
+
+### get user with project
+GET http://localhost:3000/user/3?includeProjects=true
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsb2dpbiI6Impvc2UucGVkcm8iLCJzdWIiOjMsImlhdCI6MTcxOTAyMDAwMCwiZXhwIjoxNzE5MTA2NDAwfQ.NlMcDslsTEVKyhmOgrlUq3bDF3hdkmP5sKBgb9B7KIk
+
+
+### create user
+POST http://localhost:3000/user
+Content-Type: application/json
+
+{
+    "name": "Pedro Reis",
+    "email": "preis@email.com",
+    "login": "pedro.reis",
+    "password": "123"
+}
+
+### update user
+PATCH http://localhost:3000/user/1
+Content-Type: application/json
+
+{
+    "name": "Pedro Reis",
+    "email": "pedro@email.com",
+    "login": "pedoreis",
+    "password": "123"
+}
+
+### delete user
+DELETE http://localhost:3000/user/1

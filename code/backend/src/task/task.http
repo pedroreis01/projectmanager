@@ -1,0 +1,52 @@
+### list task
+GET http://localhost:3000/task
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsb2dpbiI6InBlZHJvLnJlaXMiLCJzdWIiOjEsImlhdCI6MTcxOTI4MTc5MCwiZXhwIjoxNzE5MzY4MTkwfQ.za_HMU4PoCgKybWbOHywKKQ6ylo1t4nXeTd0G-a2Klo
+
+### get task
+GET http://localhost:3000/task/17
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsb2dpbiI6Impvc2UucGVkcm8iLCJzdWIiOjMsImlhdCI6MTcxOTAyMDAwMCwiZXhwIjoxNzE5MTA2NDAwfQ.NlMcDslsTEVKyhmOgrlUq3bDF3hdkmP5sKBgb9B7KIk
+
+### get task for user filter project
+GET http://localhost:3000/task/user-project/filter?projectId=1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsb2dpbiI6InBlZHJvLnJlaXMiLCJzdWIiOjEsImlhdCI6MTcxOTMzODIwMiwiZXhwIjoxNzE5NDI0NjAyfQ.UN2epRJfMjUNdySI7dff8rVePJWnyP3klqWyokPJGCs
+
+### get task for project
+GET http://localhost:3000/task/project/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsb2dpbiI6InBlZHJvLnJlaXMiLCJzdWIiOjEsImlhdCI6MTcxOTM3MjAzNCwiZXhwIjoxNzE5NDU4NDM0fQ.njxP0goQVPZMdfnJiCQIVYBNc1vA70OrRk6iqSCrgqs
+
+
+### create task
+POST http://localhost:3000/task
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsb2dpbiI6InBlZHJvLnJlaXMiLCJzdWIiOjEsImlhdCI6MTcxOTI4MTc5MCwiZXhwIjoxNzE5MzY4MTkwfQ.za_HMU4PoCgKybWbOHywKKQ6ylo1t4nXeTd0G-a2Klo
+Content-Type: application/json
+
+{
+    "name": "Task 12",
+    "description": "Task 12 - desc",
+    "dueDate": "2024-06-26",
+    "projectId": 3
+}
+
+### update task
+PATCH http://localhost:3000/task/17
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsb2dpbiI6Impvc2UucGVkcm8iLCJzdWIiOjMsImlhdCI6MTcxOTAyMDAwMCwiZXhwIjoxNzE5MTA2NDAwfQ.NlMcDslsTEVKyhmOgrlUq3bDF3hdkmP5sKBgb9B7KIk
+Content-Type: application/json
+
+{
+    "name": "Task 22",
+    "description": "Task 1 - projeto 2",
+    "dueDate": "2024-06-22",
+    "projectId": 4
+}
+
+### change status task
+PATCH http://localhost:3000/task/17/status
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsb2dpbiI6Impvc2UucGVkcm8iLCJzdWIiOjMsImlhdCI6MTcxOTAyMDAwMCwiZXhwIjoxNzE5MTA2NDAwfQ.NlMcDslsTEVKyhmOgrlUq3bDF3hdkmP5sKBgb9B7KIk
+Content-Type: application/json
+
+{
+    "done": true
+}
+
+### delete task
+DELETE http://localhost:3000/task/17
