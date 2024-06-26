@@ -1,0 +1,80 @@
+### list projects
+GET http://localhost:3000/project
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsb2dpbiI6Impvc2UucGVkcm8iLCJzdWIiOjMsImlhdCI6MTcxOTAyMDAwMCwiZXhwIjoxNzE5MTA2NDAwfQ.NlMcDslsTEVKyhmOgrlUq3bDF3hdkmP5sKBgb9B7KIk
+
+### list projects with users
+GET http://localhost:3000/project?includeUsers=true
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsb2dpbiI6InBlZHJvLnJlaXMiLCJzdWIiOjEsImlhdCI6MTcxOTM1Mjk3MiwiZXhwIjoxNzE5NDM5MzcyfQ.yT0-Nl_V85ho4S5onyUbup53TCXO2J7IcLpwuQzC81k
+
+
+### get project
+GET http://localhost:3000/project/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsb2dpbiI6InBlZHJvLnJlaXMiLCJzdWIiOjEsImlhdCI6MTcxOTM1Mjk3MiwiZXhwIjoxNzE5NDM5MzcyfQ.yT0-Nl_V85ho4S5onyUbup53TCXO2J7IcLpwuQzC81k
+
+### get project with user
+GET http://localhost:3000/project/4?includeUsers=true
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsb2dpbiI6InBlZHJvLnJlaXMiLCJzdWIiOjEsImlhdCI6MTcxOTM1Mjk3MiwiZXhwIjoxNzE5NDM5MzcyfQ.yT0-Nl_V85ho4S5onyUbup53TCXO2J7IcLpwuQzC81k
+
+### get project not-linked-user
+GET http://localhost:3000/project/unlinked-user/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsb2dpbiI6InBlZHJvLnJlaXMiLCJzdWIiOjEsImlhdCI6MTcxOTI4MTc5MCwiZXhwIjoxNzE5MzY4MTkwfQ.za_HMU4PoCgKybWbOHywKKQ6ylo1t4nXeTd0G-a2Klo
+
+### get project linked-user
+GET http://localhost:3000/project/linked-user/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsb2dpbiI6InBlZHJvLnJlaXMiLCJzdWIiOjEsImlhdCI6MTcxOTM1Mjk3MiwiZXhwIjoxNzE5NDM5MzcyfQ.yT0-Nl_V85ho4S5onyUbup53TCXO2J7IcLpwuQzC81k
+
+
+### create project
+POST http://localhost:3000/project
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsb2dpbiI6Impvc2UucGVkcm8iLCJzdWIiOjMsImlhdCI6MTcxOTAyMDAwMCwiZXhwIjoxNzE5MTA2NDAwfQ.NlMcDslsTEVKyhmOgrlUq3bDF3hdkmP5sKBgb9B7KIk
+Content-Type: application/json
+
+{
+    "name": "Projeto 1",
+    "description": "Projeto 1 desc",
+    "startDate": "2024-06-25"
+}
+
+### create project with user
+POST http://localhost:3000/project/user/3
+Content-Type: application/json
+
+{
+    "name": "Projeto 2",
+    "description": "Projeto 2 com varias tarefas",
+    "startDate": "2024-06-25"
+}
+
+### link project user
+POST http://localhost:3000/project/3/link-users
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsb2dpbiI6InBlZHJvLnJlaXMiLCJzdWIiOjEsImlhdCI6MTcxOTI4MTc5MCwiZXhwIjoxNzE5MzY4MTkwfQ.za_HMU4PoCgKybWbOHywKKQ6ylo1t4nXeTd0G-a2Klo
+Content-Type: application/json
+
+{
+    "userIds": [1]
+}
+
+### unlink project user
+POST http://localhost:3000/project/4/unlink-users
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJsb2dpbiI6InBlZHJvLnJlaXMiLCJzdWIiOjEsImlhdCI6MTcxOTI4MTc5MCwiZXhwIjoxNzE5MzY4MTkwfQ.za_HMU4PoCgKybWbOHywKKQ6ylo1t4nXeTd0G-a2Klo
+Content-Type: application/json
+
+{
+    "userIds": [1]
+}
+
+### update project
+PATCH http://localhost:3000/project/1
+Content-Type: application/json
+
+{
+    "name": "Pedro Reis",
+    "email": "pedro@email.com",
+    "login": "pedoreis",
+    "password": "123"
+}
+
+
+
+### delete project
+DELETE http://localhost:3000/project/1
