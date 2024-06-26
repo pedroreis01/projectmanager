@@ -3,7 +3,8 @@ import { Navigate, Outlet, Route, Routes } from 'react-router-dom';
 import Identification from '../pages/Identification';
 import { useAuth } from '../hooks/useAuth';
 import MyProjects from '../pages/MyProjects';
-import Tasks from '../pages/Tasks';
+import MyTasks from '../pages/MyTasks';
+import NewProjects from '../pages/NewProjects';
 
 const Navigation: React.FC = () => {
   const {user} = useAuth();
@@ -22,7 +23,8 @@ const Navigation: React.FC = () => {
         {/* Rotas privadas internas */}
       <Route element={<PrivateRoutes />}>
         <Route path="/meus-projetos" element={<MyProjects />} />
-        <Route path="/tarefas" element={<Tasks />} />
+        <Route path="/novos-projetos" element={<NewProjects />} />
+        <Route path="/minhas-tarefas" element={<MyTasks />} />
       </Route>
 
       <Route path="/" element={<Identification />} />

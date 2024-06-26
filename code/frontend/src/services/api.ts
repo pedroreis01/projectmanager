@@ -37,7 +37,7 @@ api.interceptors.response.use(
     return response;
   },
   function (error) {
-    if (error.response.status === 401) {
+    if (error.response.status === 401 && window.location.pathname !== '/') {
       localStorage.clear();
       window.location.href = '/';
       alert('Sua sessão expirou!');

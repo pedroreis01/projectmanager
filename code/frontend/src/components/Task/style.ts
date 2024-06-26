@@ -46,7 +46,7 @@ export const TaskGroupDate = styled.div`
   gap: 10px;
 `;
 
-export const TaskDate = styled.p`
+export const TaskDate = styled.div`
   display: flex;
   align-items: center;
   font-size: 12px;

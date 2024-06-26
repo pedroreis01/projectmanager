@@ -1,19 +1,19 @@
 import styled from 'styled-components';
 
-export const TaskListWrapper = styled.div`
+export const ProjectListWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
 `;
 
-export const TaskInput = styled.input`
+export const ProjectInput = styled.input`
   margin-bottom: 10px;
   padding: 8px;
   font-size: 16px;
 `;
 
-export const TaskButton = styled.button`
+export const ProjectButton = styled.button`
   background-color: #007bff;
   color: #fff;
   border: none;
@@ -22,7 +22,7 @@ export const TaskButton = styled.button`
   cursor: pointer;
 `;
 
-export const NoTasksText = styled.div`
+export const NoProjectsText = styled.div`
   font-size: 1.2rem;
   font-weight: 500;
   text-align: center;

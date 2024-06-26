@@ -14,13 +14,13 @@ export const routesLinks: IRouteLinks[] = [
     icon: HiOutlineClipboardDocumentList,
   },
   {
-    name: 'Projetos',
-    path: '/projetos',
+    name: 'Minhas Tarefas',
+    path: '/minhas-tarefas',
     icon: HiOutlineClipboardDocumentList,
   },
   {
-    name: 'Tarefas',
-    path: '/tarefas',
+    name: 'Novos Projetos',
+    path: '/novos-projetos',
     icon: HiOutlineClipboardDocumentList,
   },
 ];

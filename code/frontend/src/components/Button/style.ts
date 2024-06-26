@@ -145,6 +145,25 @@ export const Button = styled.button<{
       }
     `}
 
+    ${(props) =>
+    props.$color === 'white' &&
+    css`
+      background: #fff;
+      color: #000;
+      & * {
+        color: #000;
+      }
+      &:hover {
+        background: ${darken(0.1, '#fff')};
+      }
+      &:disabled {
+        & > span {
+          border-color: ${lighten(0.2, '#fff')} ${lighten(0.2, '#fff')}
+            transparent !important;
+        }
+      }
+    `}
+
     &:disabled {
     opacity: 0.5;
     pointer-events: none;

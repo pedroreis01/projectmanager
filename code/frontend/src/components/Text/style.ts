@@ -21,32 +21,32 @@ export const Text = styled.div<{
     switch (props.$fontSize) {
       case 'titleh1':
         return css`
-          font-size: 50px;
+          font-size: 1.5rem;
           font-weight: 600;
         `;
       case 'titleh2':
         return css`
-          font-size: 32px;
+          font-size: 1.4rem;
           font-weight: 600;
         `;
       case 'titleh3':
         return css`
-          font-size: 20px;
+          font-size: 1.3rem;
           font-weight: 500;
         `;
       case 'subtitle':
         return css`
-          font-size: 26px;
+          font-size: 1.2rem;
           font-weight: 200;
         `;
       case 'paragraph':
         return css`
-          font-size: 20px;
+          font-size: 1rem;
           font-weight: 200;
         `;
       case 'small':
         return css`
-          font-size: 12px;
+          font-size: 0.8rem;
           font-weight: 300;
         `;
       default:

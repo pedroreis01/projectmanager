@@ -1,12 +1,12 @@
 import CardContent from '../../components/CardContent';
 import ProjectList from '../../components/ProjectList';
 
-const MyProjects: React.FC = () => {
+const NewProjects: React.FC = () => {
   return (
     <CardContent fullWidth>
-      <ProjectList linkedUser={true} />
+      <ProjectList linkedUser={false} />
     </CardContent>
   );
 };
 
-export default MyProjects;
+export default NewProjects;

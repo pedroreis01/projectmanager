@@ -10,7 +10,7 @@ interface ILayout {
 }
 
 //rotas que não possuem layout
-const routesAdmin = ['/meus-projetos', '/tarefas'];
+const nonAdminRoutes = ['/'];
 
 export const Layout: React.FC<ILayout> = ({ children }) => {
   const [open, setOpen] = useState(true);
@@ -22,10 +22,9 @@ export const Layout: React.FC<ILayout> = ({ children }) => {
   const title = location.pathname.split('/')[1].split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1))
   .join(' ');
 
-  return routesAdmin.includes(location.pathname) ||
-    location.pathname.startsWith(routesAdmin[1]) ? (
+  return !nonAdminRoutes.includes(location.pathname) ?(
     <C.ContentWrapper>
-      <Container background="gray" p="0">
+      <Container background="gray" p="2% 0">
         <C.MenuWrapper $open={open} onClick={() => setOpen(true)}>
           <FiMenu size={20} />
         </C.MenuWrapper>

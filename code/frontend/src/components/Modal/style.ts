@@ -27,6 +27,7 @@ export const ModalContent = styled.div`
   border-radius: 10px;
   display: flex;
   flex-direction: column;
+  min-width: 20vw;
 
   @media (max-width: 900px) {
     max-width: 90vw;

@@ -21,6 +21,7 @@ interface TaskProps {
   deleteTask: (id: number) => void;
   editTask: (task: ITask) => void;
   toggleCompleted: (id: number, done: boolean) => void;
+  justList?: boolean;
 }
 
 const Task: React.FC<TaskProps> = ({
@@ -28,6 +29,7 @@ const Task: React.FC<TaskProps> = ({
   deleteTask,
   editTask,
   toggleCompleted,
+  justList
 }) => {
   return (
     <C.TaskItemWrapper>
@@ -35,9 +37,10 @@ const Task: React.FC<TaskProps> = ({
         type="checkbox"
         checked={task.done}
         onChange={() => toggleCompleted(task.id, !task.done)}
+        disabled={justList}
       />
       <C.TaskBody>
-        <C.TaskText className="name-project">{task.projectName}</C.TaskText>
+        {!justList && <C.TaskText className="name-project">{task.projectName}</C.TaskText>}
         <C.TaskText $done={task.done}>{task.name}</C.TaskText>
         <C.TaskGroupDate>
           <C.TaskDate>
@@ -51,7 +54,8 @@ const Task: React.FC<TaskProps> = ({
           )}
         </C.TaskGroupDate>
       </C.TaskBody>
-
+      
+      {!justList && 
       <C.TaskActions>
         <Button color="primary" isRound onlyIcon onClick={() => editTask(task)}>
           <FiEdit />
@@ -65,6 +69,7 @@ const Task: React.FC<TaskProps> = ({
           <HiOutlineTrash />
         </Button>
       </C.TaskActions>
+}
     </C.TaskItemWrapper>
   );
 };

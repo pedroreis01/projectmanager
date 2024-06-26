@@ -3,8 +3,7 @@ import styled from 'styled-components';
 
 export const ContentWrapper = styled.div`
   display: flex;
-  width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
 `;
 
 export const ContentSidebarWrapper = styled.div<{ $open: boolean }>`
@@ -17,6 +16,7 @@ export const ContentSidebarWrapper = styled.div<{ $open: boolean }>`
   width: ${({ $open }) => ($open ? 'calc(100% - 300px)' : '90%')};
   @media only screen and (max-width: 768px) {
     margin-left: 0;
+    width: 100%;
   }
 `;
 

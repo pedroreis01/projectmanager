@@ -60,6 +60,9 @@ export const ContentImage = styled.div`
 
   @media screen and (max-width: 768px) {
     width: 100%;
+    & > img {
+      max-width: 200px;
+    }
   }
 `;
 
