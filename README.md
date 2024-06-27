@@ -10,6 +10,17 @@ O projeto utiliza as seguintes tecnologias:
 - **Backend:** NestJS
 - **Banco de Dados:** PostgreSQL
 
+## Deploy
+
+A aplicação foi implantada no Kubernetes para garantir escalabilidade e disponibilidade. Utilizando recursos como Pods, Deployments e Services, a aplicação está configurada para lidar com cargas de trabalho variáveis de forma eficiente.
+
+A aplicação está disponível para no seguinte endereço: [http://172.233.3.159/](http://172.233.3.159/) até 10/07/2024.
+
+
+## Arquitetura
+![Arquitetura do Projeto](architecture/softwareArchitecture.png)
+
+
 ## Funcionalidades
 
 1. **Criar Usuário:** Os usuários podem criar uma conta para acessar o sistema.
@@ -20,6 +31,8 @@ O projeto utiliza as seguintes tecnologias:
 6. **Adicionar Tarefas a um Projeto:** Os usuários podem adicionar tarefas a um projeto existente.
 7. **Listar Tarefas de um Projeto:** Os usuários podem listar todas as tarefas associadas a um projeto específico.
 8. **Marcar uma Tarefa como Concluída:** Os usuários podem marcar uma tarefa específica como concluída.
+
+
 
 ## Instruções de Configuração
 
@@ -63,13 +76,7 @@ O projeto utiliza as seguintes tecnologias:
 
    O arquivo `docker-compose.yml` deve estar configurado corretamente para subir o serviço do PostgreSQL.
 
-5. **Execute as Migrações:**
-
-   ```bash
-   npm run typeorm migration:run
-   ```
-
-6. **Inicie o Servidor Backend:**
+5. **Inicie o Servidor Backend:**
 
    ```bash
    yarn start:dev
