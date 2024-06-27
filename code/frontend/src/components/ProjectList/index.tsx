@@ -310,7 +310,7 @@ const ProjectList: React.FC<ProjectListProps> = ({ linkedUser }) => {
               type="date"
               name="dueDate"
               required
-              value={moment(projectFields.startDate).format('YYYY-MM-DD')}
+              value={moment(projectFields.startDate).utc().format('YYYY-MM-DD')}
               onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
                 setProjectFields(prev => ({ ...prev, startDate: e.target.value }))
               }

@@ -298,7 +298,7 @@ const TaskList: React.FC<TaskListProps> = ({ projectId, justList }) => {
               name="dueDate"
               placeholder="Data de Entrega"
               required
-              value={moment(taskFields.dueDate).format('YYYY-MM-DD')}
+              value={moment(taskFields.dueDate).utc().format('YYYY-MM-DD')}
               onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
                 setTaskFields((prev) => ({ ...prev, dueDate: e.target.value }))
               }

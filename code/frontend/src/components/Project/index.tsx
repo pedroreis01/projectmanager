@@ -69,7 +69,7 @@ const Project: React.FC<ProjectProps> = ({
             </Text>
             <C.ProjectDate>
               <FaRegCalendarAlt />{' '}
-              {moment(project.startDate).format('DD/MM/YYYY')}
+              {moment(project.startDate).utc().format('DD/MM/YYYY')}
             </C.ProjectDate>
           </C.Title>
           <C.ProjectDetailsPreview>
@@ -136,7 +136,7 @@ const Project: React.FC<ProjectProps> = ({
           <C.ProjectDescription>
             <Text fontSize="paragraph">
               <b>Data de Início: </b>
-              {`${moment(project.startDate).format('DD/MM/yyyy')}`}
+              {`${moment(project.startDate).utc().format('DD/MM/yyyy')}`}
             </Text>
           </C.ProjectDescription>
           <C.ProjectDescription>

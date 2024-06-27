@@ -126,7 +126,7 @@ export class TaskService {
 
     task.done = done;
     if (done) {
-      const date = moment().format('YYYY-MM-DD HH:mm:ss');
+      const date = moment().utc().format('YYYY-MM-DD HH:mm:ss');
       task.finishedDate = date.toString();
     } else {
       task.finishedDate = null; // Reset finishedDate if task is not done

@@ -44,12 +44,12 @@ const Task: React.FC<TaskProps> = ({
         <C.TaskText $done={task.done}>{task.name}</C.TaskText>
         <C.TaskGroupDate>
           <C.TaskDate>
-            <FaRegCalendarAlt /> {moment(task.dueDate).format('DD/MM/yyyy')}
+            <FaRegCalendarAlt /> {moment(task.dueDate).utc().format('DD/MM/yyyy')}
           </C.TaskDate>
           {task.done && (
             <C.TaskDate>
               <FaRegCalendarCheck />{' '}
-              {moment(task.finishedDate).format('DD/MM/yyyy')}
+              {moment(task.finishedDate).utc().format('DD/MM/yyyy')}
             </C.TaskDate>
           )}
         </C.TaskGroupDate>
