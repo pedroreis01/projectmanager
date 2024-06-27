@@ -18,7 +18,7 @@ A aplicação está disponível para no seguinte endereço: [http://172.233.3.15
 
 
 ## Arquitetura
-![Arquitetura do Projeto]([architecture/softwareArchitecture.png](https://github.com/pedroreis01/projectmanager/blob/main/architecture/softwareArchitecture.PNG?raw=true))
+![Arquitetura do Projeto](https://github.com/pedroreis01/projectmanager/blob/main/architecture/softwareArchitecture.PNG)
 
 
 ## Funcionalidades
