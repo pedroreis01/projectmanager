@@ -20,3 +20,4 @@ spec:
           image: pedroreis09/projectmanager-ui:latest
           ports:
             - containerPort: 3000
+          imagePullPolicy: Always
