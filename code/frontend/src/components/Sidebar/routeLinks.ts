@@ -1,5 +1,9 @@
 import { IconType } from 'react-icons';
-import { HiOutlineClipboardDocumentList } from 'react-icons/hi2';
+import { GrTask } from 'react-icons/gr';
+import {
+  HiOutlineClipboardDocumentCheck,
+  HiOutlineClipboardDocumentList,
+} from 'react-icons/hi2';
 
 interface IRouteLinks {
   name: string;
@@ -11,12 +15,12 @@ export const routesLinks: IRouteLinks[] = [
   {
     name: 'Meus Projetos',
     path: '/meus-projetos',
-    icon: HiOutlineClipboardDocumentList,
+    icon: HiOutlineClipboardDocumentCheck,
   },
   {
     name: 'Minhas Tarefas',
     path: '/minhas-tarefas',
-    icon: HiOutlineClipboardDocumentList,
+    icon: GrTask,
   },
   {
     name: 'Novos Projetos',
