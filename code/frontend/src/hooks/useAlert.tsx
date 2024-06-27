@@ -1,5 +1,5 @@
 import React, { createContext, useCallback, useContext, useState } from 'react';
-import { v4 as uuid } from 'uuid';
+import { v4 } from 'uuid';
 
 import AlertPopUp, { AlertConfigData, AlertType } from '../components/Alert';
 import { ContentAlerts } from '../components/Alert/style';
@@ -21,7 +21,7 @@ const AlertProvider: React.FC<IAlert> = ({ children }) => {
   const addAlert = useCallback((config: Omit<AlertConfigData, 'id'>) => {
     const alert: AlertConfigData = {
       ...config,
-      id: uuid()
+      id: v4()
     };
 
     setMessages((state) => [...state, alert]);

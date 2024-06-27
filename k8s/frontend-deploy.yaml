@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: projectmanager-ui
+  namespace: frontend
+  labels:
+    app: projectmanager-ui
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: projectmanager-ui
+  template:
+    metadata:
+      labels:
+        app: projectmanager-ui
+    spec:
+      containers:
+        - name: projectmanager-ui
+          image: pedroreis09/projectmanager-ui:latest
+          ports:
+            - containerPort: 3000

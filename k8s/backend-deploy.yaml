@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: projectmanager-api
+  namespace: backend
+  labels:
+    app: projectmanager-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: projectmanager-api
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 1
+      maxSurge: 1
+  template:
+    metadata:
+      labels:
+        app: projectmanager-api
+    spec:
+      containers:
+        - name: projectmanager-api
+          image: pedroreis09/projectmanager-api:latest
+          ports:
+            - containerPort: 3001  
+          imagePullPolicy: Always

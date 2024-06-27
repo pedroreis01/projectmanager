@@ -10,7 +10,7 @@ import { ConfigModule } from '@nestjs/config';
   imports: [
     TypeOrmModule.forRoot({
       type: 'postgres',
-      host: 'localhost',
+      host: 'dbpsql-postgresql.default.svc.cluster.local',
       port: 5432,
       username: 'postgres',
       password: 'postgres',
